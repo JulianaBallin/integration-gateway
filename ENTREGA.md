@@ -16,6 +16,34 @@ Trabalho final do módulo **Gerenciamento Avançado de Containers**.
 
 ---
 
+## Checklist de Entrega
+
+| # | Etapa | Descrição | Responsável |
+|---|---|---|---|
+| 1 | Criar `.env` | Copiar `.env.example` para `.env` e revisar variáveis | |
+| 2 | Subir o ambiente | `docker compose up -d --build` | |
+| 3 | Verificar serviços healthy | `docker compose ps` — todos com status `healthy` | |
+| 4 | Testar healthchecks | `curl /health` no gateway-api e audit-api | |
+| 5 | Enviar payload válido | `sh scripts/send_valid_order.sh` e confirmar `201` | |
+| 6 | Enviar payload inválido | `sh scripts/send_invalid_order.sh` e confirmar `400` | |
+| 7 | Consultar auditoria | `GET /audits` e `GET /audits/summary` | |
+| 8 | Coletar evidência: serviços | `docker compose ps` | |
+| 9 | Coletar evidência: redes | `docker network ls` + `docker network inspect` nas 3 redes | |
+| 10 | Coletar evidência: volumes | `docker volume ls` + `docker volume inspect postgres_data` | |
+| 11 | Coletar evidência: logs | `docker compose logs` dos 4 serviços Python | |
+| 12 | Coletar evidência: hardening | `docker inspect` do transformer — confirmar `ReadonlyRootfs`, `CapDrop`, `SecurityOpt`, `Memory`, `NanoCpus` | |
+| 13 | Simular incidente | `docker compose -f docker-compose.yml -f docker-compose.incident.yml up -d --build transformer` | |
+| 14 | Reproduzir falha | `sh scripts/send_valid_order.sh` com transformer quebrado — confirmar `502` | |
+| 15 | Diagnosticar pelo log | `docker compose logs transformer` + `docker compose logs internal-api-mock` | |
+| 16 | Confirmar falha na auditoria | `GET /audits/summary` — ver registros `FAILED` com `broken-v2` | |
+| 17 | Fazer rollback | `docker compose up -d --build transformer` | |
+| 18 | Validar pós-rollback | `sh scripts/send_valid_order.sh` — confirmar `201` e `stable-v1` | |
+| 19 | Confirmar auditoria pós-rollback | `GET /audits/summary` — ver `SUCCESS` com `stable-v1` ao lado dos `FAILED` | |
+| 20 | Revisão do ENTREGA.md | Conferir arquitetura, respostas e evidências documentadas | |
+| 21 | Preparar apresentação | Demo ao vivo: fluxo normal, incidente, rollback e evidências | |
+
+---
+
 ## 1. Contexto do Problema
 
 Empresas com sistemas legados frequentemente recebem dados externos em formatos variados que não são compatíveis com seus contratos internos. O **Integration Gateway** resolve esse problema criando uma camada intermediária que:
