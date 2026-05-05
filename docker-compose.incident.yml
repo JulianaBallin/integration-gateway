@@ -1,0 +1,3 @@
+services:
+  transformer:
+    build: ./transformer-broken

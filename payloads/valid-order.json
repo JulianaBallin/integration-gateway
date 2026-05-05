@@ -1,0 +1,17 @@
+{
+  "order_id": "EXT-2026-0001",
+  "customer": {
+    "code": "CUST-ALPHA",
+    "name": "Alpha Manufacturing"
+  },
+  "items": [
+    {
+      "sku": "MB-001",
+      "quantity": 10
+    },
+    {
+      "sku": "RAM-008",
+      "quantity": 20
+    }
+  ]
+}
