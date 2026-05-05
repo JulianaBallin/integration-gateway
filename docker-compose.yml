@@ -1,23 +1,108 @@
 services:
+
+  # Recebe requisições externas e repassa ao transformer
   gateway-api:
     build: ./gateway-api
+    ports:
+      - "${GATEWAY_PORT:-8000}:8000"
+    environment:
+      GATEWAY_PORT: ${GATEWAY_PORT:-8000}
+      TRANSFORMER_URL: ${TRANSFORMER_URL}
     networks:
       - external_net
       - internal_net
+    depends_on:
+      transformer:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 128m
+    user: "1000:1000"
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+  # Valida e transforma o payload externo para o contrato legado; grava auditoria
   transformer:
     build: ./transformer
-    networks:
-      - internal_api
-      - data_net
-
-  internal-api-mock:
-    build: ./internal-api-mock
+    environment:
+      TRANSFORMER_PORT: ${TRANSFORMER_PORT:-8100}
+      INTERNAL_API_URL: ${INTERNAL_API_URL}
+      POSTGRES_HOST: ${POSTGRES_HOST:-postgres}
+      POSTGRES_PORT: ${POSTGRES_PORT:-5432}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     networks:
       - internal_net
+      - data_net
+    depends_on:
+      postgres:
+        condition: service_healthy
+      internal-api-mock:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8100/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 256m
+    user: "1000:1000"
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
 
-   postgres:
+  # Simula o sistema legado; valida o contrato LEGACY_ORDER_V1
+  internal-api-mock:
+    build: ./internal-api-mock
+    environment:
+      INTERNAL_API_PORT: ${INTERNAL_API_PORT:-8200}
+    networks:
+      - internal_net
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8200/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 128m
+    user: "1000:1000"
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+  # Banco de dados — sem porta exposta ao host, acessível só via data_net
+  postgres:
     image: postgres:15-alpine
-    container_name: postgres
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
@@ -27,20 +112,63 @@ services:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - data_net
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
       interval: 10s
       timeout: 5s
-      retries: 10
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 256m
+    restart: unless-stopped
 
+  # Expõe endpoints de consulta de auditoria para clientes externos
   audit-api:
+    build: ./audit-api
+    ports:
+      - "${AUDIT_API_PORT:-8300}:8300"
+    environment:
+      AUDIT_API_PORT: ${AUDIT_API_PORT:-8300}
+      POSTGRES_HOST: ${POSTGRES_HOST:-postgres}
+      POSTGRES_PORT: ${POSTGRES_PORT:-5432}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     networks:
       - external_net
-      - internal_net
       - data_net
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8300/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 128m
+    user: "1000:1000"
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
 
 networks:
-  - external_net #	gateway-api, audit-api  	                     |   Acesso externo controlado
-  - internal_net #	gateway-api, transformer, internal-api-mock	   |   Integração interna entre serviços
-  - data_net     #  transformer, audit-api, postgres	             |   Persistência e auditoria
+  external_net:  # gateway-api, audit-api — acesso externo controlado
+    driver: bridge
+  internal_net:  # gateway-api, transformer, internal-api-mock — integração interna
+    driver: bridge
+  data_net:      # transformer, audit-api, postgres — persistência e auditoria
+    driver: bridge
+
+volumes:
+  postgres_data:  # persistência dos registros de auditoria entre reinicializações
