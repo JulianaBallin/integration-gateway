@@ -1,0 +1,6 @@
+NAME                                      IMAGE                                   COMMAND                  SERVICE             CREATED              STATUS                        PORTS
+integration-gateway-audit-api-1           integration-gateway-audit-api           "python app.py"          audit-api           About a minute ago   Up 53 seconds (healthy)       0.0.0.0:8300->8300/tcp, [::]:8300->8300/tcp
+integration-gateway-gateway-api-1         integration-gateway-gateway-api         "python app.py"          gateway-api         About a minute ago   Up 42 seconds (healthy)       0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+integration-gateway-internal-api-mock-1   integration-gateway-internal-api-mock   "python app.py"          internal-api-mock   About a minute ago   Up About a minute (healthy)   
+integration-gateway-postgres-1            postgres:15-alpine                      "docker-entrypoint.s…"   postgres            About a minute ago   Up About a minute (healthy)   5432/tcp
+integration-gateway-transformer-1         integration-gateway-transformer         "python app.py"          transformer         About a minute ago   Up 52 seconds (healthy)       

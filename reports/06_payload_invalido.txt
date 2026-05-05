@@ -1,0 +1,5 @@
+=== Payload inválido (POST /integrations) ===
+Comando: sh scripts/send_invalid_order.sh
+
+{"correlation_id":"demo-invalid-001","gateway":"accepted","transformer_response":{"correlation_id":"demo-invalid-001","error":"missing required external fields: ['order_id']","status":"failed","transformer_version":"stable-v1"},"transformer_status":400}
+

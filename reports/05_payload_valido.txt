@@ -1,0 +1,5 @@
+=== Payload válido (POST /integrations) ===
+Comando: sh scripts/send_valid_order.sh
+
+{"correlation_id":"demo-valid-001","gateway":"accepted","transformer_response":{"correlation_id":"demo-valid-001","internal_response":{"internal_hostname":"58cc43ef7b12","legacy_order_id":"EXT-2026-0001","legacy_protocol":"LEGACY_ORDER_V1","processed_at":1777998405.4398136,"status":"accepted"},"status":"success","transformer_version":"stable-v1"},"transformer_status":201}
+

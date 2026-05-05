@@ -1,0 +1,14 @@
+=== curl gateway-api /health ===
+{
+    "hostname": "4d4f2218913a",
+    "service": "gateway-api",
+    "status": "healthy",
+    "transformer_url": "http://transformer:8100/transform"
+}
+
+=== curl audit-api /health ===
+{
+    "hostname": "addee4fcd6fa",
+    "service": "audit-api",
+    "status": "healthy"
+}
