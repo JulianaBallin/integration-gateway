@@ -1,4 +1,4 @@
-# Entrega Final — Projeto 5: Integration Gateway
+# Entrega Final - Projeto 5: Integration Gateway
 
 Trabalho final do módulo **Gerenciamento Avançado de Containers**.
 
@@ -12,6 +12,7 @@ Trabalho final do módulo **Gerenciamento Avançado de Containers**.
 | Fernanda de Oliveira da Costa | [@nanda-costa](https://github.com/nanda-costa) |
 | Pedro Henrique Oliveira Dias | [@pedroddias-oss](https://github.com/pedroddias-oss) |
 | Juliana Ballin Lima | [@JulianaBallin](https://github.com/JulianaBallin) |
+| Camila Felix dos Reis | [@cawzkf](https://github.com/cawzkf) |
 
 ---
 
@@ -212,7 +213,7 @@ Resposta esperada (`201`):
 sh scripts/send_invalid_order.sh
 ```
 
-Resposta esperada (`400`) — falha de validação no transformer antes de chegar ao sistema legado.
+Resposta esperada (`400`) - falha de validação no transformer antes de chegar ao sistema legado.
 
 ### Consultar auditoria
 
