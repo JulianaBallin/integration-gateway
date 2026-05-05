@@ -1,0 +1,9 @@
+=== INCIDENTE: Payload válido com transformer-broken ===
+Comando: sh scripts/send_valid_order.sh
+
+{"correlation_id":"demo-valid-001","gateway":"accepted","transformer_response":{"correlation_id":"demo-valid-001","internal_response":{"error":"contract violation","missing_fields":["legacy_order_id","legacy_customer_code","legacy_total_items","legacy_items"],"status":"rejected"},"internal_status":422,"status":"failed","transformer_version":"broken-v2"},"transformer_status":502}
+
+
+
+=== GET /audits/summary (mostrando falhas) ===
+[{"status":"SUCCESS","total":3,"transformer_version":"stable-v1"},{"status":"FAILED","total":1,"transformer_version":"broken-v2"},{"status":"FAILED","total":1,"transformer_version":"stable-v1"}]

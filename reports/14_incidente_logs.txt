@@ -1,0 +1,146 @@
+=== DIAGNÓSTICO: Logs do transformer (broken-v2) ===
+transformer-1  | [transformer] starting on port 8100 version=broken-v2
+transformer-1  |  * Serving Flask app 'app'
+transformer-1  |  * Debug mode: off
+transformer-1  | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+transformer-1  |  * Running on all addresses (0.0.0.0)
+transformer-1  |  * Running on http://127.0.0.1:8100
+transformer-1  |  * Running on http://172.23.0.4:8100
+transformer-1  | [33mPress CTRL+C to quit[0m
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:27:44] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:27:55] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:28:05] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:28:16] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:28:26] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:28:36] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:28:47] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:28:57] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:29:08] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:29:18] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:29:29] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:29:39] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:29:49] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:30:00] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:30:10] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:30:21] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:30:31] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:30:42] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:30:52] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:31:03] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:31:13] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:31:23] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:31:34] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:31:44] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:31:55] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:32:05] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:32:16] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:32:26] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:32:36] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:32:47] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:32:57] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:33:08] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:33:18] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:33:29] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:33:39] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:33:50] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:34:00] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:34:10] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:34:21] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:34:31] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:34:42] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:34:52] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:35:03] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:35:13] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:35:24] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:35:34] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:35:44] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:35:55] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:36:05] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:36:16] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:36:26] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:36:37] "GET /health HTTP/1.1" 200 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:36:47] "GET /health HTTP/1.1" 200 -
+transformer-1  | [transformer] FAILED correlation_id=demo-valid-001 internal_status=422
+transformer-1  | 172.25.0.4 - - [05/May/2026 16:36:56] "[35m[1mPOST /transform HTTP/1.1[0m" 502 -
+transformer-1  | 127.0.0.1 - - [05/May/2026 16:36:58] "GET /health HTTP/1.1" 200 -
+
+=== DIAGNÓSTICO: Logs do internal-api-mock ===
+internal-api-mock-1  | [internal-api-mock] starting on port 8200
+internal-api-mock-1  |  * Serving Flask app 'app'
+internal-api-mock-1  |  * Debug mode: off
+internal-api-mock-1  | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+internal-api-mock-1  |  * Running on all addresses (0.0.0.0)
+internal-api-mock-1  |  * Running on http://127.0.0.1:8200
+internal-api-mock-1  |  * Running on http://172.25.0.2:8200
+internal-api-mock-1  | [33mPress CTRL+C to quit[0m
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:25:10] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:25:21] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:25:32] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:25:43] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:25:55] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:26:06] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:26:17] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:26:27] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | [internal-api-mock] accepted legacy_order_id=EXT-2026-0001
+internal-api-mock-1  | 172.25.0.3 - - [05/May/2026 16:26:34] "[35m[1mPOST /legacy/orders HTTP/1.1[0m" 201 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:26:38] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | [internal-api-mock] accepted legacy_order_id=EXT-2026-0001
+internal-api-mock-1  | 172.25.0.3 - - [05/May/2026 16:26:39] "[35m[1mPOST /legacy/orders HTTP/1.1[0m" 201 -
+internal-api-mock-1  | [internal-api-mock] accepted legacy_order_id=EXT-2026-0001
+internal-api-mock-1  | 172.25.0.3 - - [05/May/2026 16:26:45] "[35m[1mPOST /legacy/orders HTTP/1.1[0m" 201 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:26:49] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:27:00] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:27:11] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:27:22] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:27:33] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:27:44] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:27:55] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:28:06] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:28:17] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:28:29] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:28:40] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:28:51] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:29:02] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:29:14] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:29:25] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:29:37] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:29:49] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:30:00] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:30:12] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:30:24] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:30:35] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:30:46] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:30:57] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:31:09] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:31:20] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:31:31] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:31:43] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:31:54] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:32:06] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:32:17] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:32:29] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:32:40] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:32:52] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:33:04] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:33:16] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:33:28] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:33:40] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:33:51] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:34:02] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:34:14] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:34:25] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:34:37] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:34:48] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:35:00] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:35:11] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:35:23] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:35:34] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:35:46] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:35:57] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:36:09] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:36:20] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:36:32] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:36:43] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:36:55] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | [internal-api-mock] rejected missing=['legacy_order_id', 'legacy_customer_code', 'legacy_total_items', 'legacy_items'] payload={'order_id': 'EXT-2026-0001', 'customer_code': 'CUST-ALPHA', 'total_items': 30, 'items': [{'sku': 'MB-001', 'qty': 10}, {'sku': 'RAM-008', 'qty': 20}], 'source_contract': 'BROKEN_EXTERNAL_ORDER_V3', 'transformed_at': 1777999016.1359363, 'transformer_hostname': 'cbb6cf630bdc'}
+internal-api-mock-1  | 172.25.0.3 - - [05/May/2026 16:36:56] "[31m[1mPOST /legacy/orders HTTP/1.1[0m" 422 -
