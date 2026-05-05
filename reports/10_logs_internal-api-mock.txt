@@ -1,0 +1,24 @@
+internal-api-mock-1  | [internal-api-mock] starting on port 8200
+internal-api-mock-1  |  * Serving Flask app 'app'
+internal-api-mock-1  |  * Debug mode: off
+internal-api-mock-1  | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+internal-api-mock-1  |  * Running on all addresses (0.0.0.0)
+internal-api-mock-1  |  * Running on http://127.0.0.1:8200
+internal-api-mock-1  |  * Running on http://172.25.0.2:8200
+internal-api-mock-1  | [33mPress CTRL+C to quit[0m
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:25:10] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:25:21] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:25:32] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:25:43] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:25:55] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:26:06] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:26:17] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:26:27] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | [internal-api-mock] accepted legacy_order_id=EXT-2026-0001
+internal-api-mock-1  | 172.25.0.3 - - [05/May/2026 16:26:34] "[35m[1mPOST /legacy/orders HTTP/1.1[0m" 201 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:26:38] "GET /health HTTP/1.1" 200 -
+internal-api-mock-1  | [internal-api-mock] accepted legacy_order_id=EXT-2026-0001
+internal-api-mock-1  | 172.25.0.3 - - [05/May/2026 16:26:39] "[35m[1mPOST /legacy/orders HTTP/1.1[0m" 201 -
+internal-api-mock-1  | [internal-api-mock] accepted legacy_order_id=EXT-2026-0001
+internal-api-mock-1  | 172.25.0.3 - - [05/May/2026 16:26:45] "[35m[1mPOST /legacy/orders HTTP/1.1[0m" 201 -
+internal-api-mock-1  | 127.0.0.1 - - [05/May/2026 16:26:49] "GET /health HTTP/1.1" 200 -

@@ -1,0 +1,25 @@
+gateway-api-1  | [gateway-api] starting on port 8000
+gateway-api-1  |  * Serving Flask app 'app'
+gateway-api-1  |  * Debug mode: off
+gateway-api-1  | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+gateway-api-1  |  * Running on all addresses (0.0.0.0)
+gateway-api-1  |  * Running on http://127.0.0.1:8000
+gateway-api-1  |  * Running on http://172.24.0.3:8000
+gateway-api-1  | [33mPress CTRL+C to quit[0m
+gateway-api-1  | 127.0.0.1 - - [05/May/2026 16:25:32] "GET /health HTTP/1.1" 200 -
+gateway-api-1  | 127.0.0.1 - - [05/May/2026 16:25:44] "GET /health HTTP/1.1" 200 -
+gateway-api-1  | 127.0.0.1 - - [05/May/2026 16:25:55] "GET /health HTTP/1.1" 200 -
+gateway-api-1  | 127.0.0.1 - - [05/May/2026 16:26:06] "GET /health HTTP/1.1" 200 -
+gateway-api-1  | 127.0.0.1 - - [05/May/2026 16:26:17] "GET /health HTTP/1.1" 200 -
+gateway-api-1  | 127.0.0.1 - - [05/May/2026 16:26:28] "GET /health HTTP/1.1" 200 -
+gateway-api-1  | 172.24.0.1 - - [05/May/2026 16:26:28] "GET /health HTTP/1.1" 200 -
+gateway-api-1  | [gateway-api] correlation_id=demo-valid-001 transformer_status=201
+gateway-api-1  | 172.24.0.1 - - [05/May/2026 16:26:34] "[35m[1mPOST /integrations HTTP/1.1[0m" 201 -
+gateway-api-1  | [gateway-api] correlation_id=demo-valid-001 transformer_status=201
+gateway-api-1  | 172.24.0.1 - - [05/May/2026 16:26:39] "[35m[1mPOST /integrations HTTP/1.1[0m" 201 -
+gateway-api-1  | 127.0.0.1 - - [05/May/2026 16:26:39] "GET /health HTTP/1.1" 200 -
+gateway-api-1  | [gateway-api] correlation_id=demo-valid-001 transformer_status=201
+gateway-api-1  | 172.24.0.1 - - [05/May/2026 16:26:45] "[35m[1mPOST /integrations HTTP/1.1[0m" 201 -
+gateway-api-1  | [gateway-api] correlation_id=demo-invalid-001 transformer_status=400
+gateway-api-1  | 172.24.0.1 - - [05/May/2026 16:26:45] "[31m[1mPOST /integrations HTTP/1.1[0m" 400 -
+gateway-api-1  | 127.0.0.1 - - [05/May/2026 16:26:50] "GET /health HTTP/1.1" 200 -
